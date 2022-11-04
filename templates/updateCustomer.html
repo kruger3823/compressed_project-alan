@@ -1,0 +1,98 @@
+{% include 'main.html' %}
+
+
+    <div class="wrapperUpdate">
+       
+    </div>
+    <div class="blockUpdate">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <a class="exitLinkUpdate" href="{% url 'customer' pk=current.id  %}">Go back
+                </div>
+                <div class="col-6">
+                    <div class="customerPicture customerPictureUpdate">
+                        <img class="imgCustomer"  src='{{ current.customer.profilePic.url }}'>
+						
+					</div>
+                </div>
+                <div class="col-3">
+                    
+                </div>
+            </div>
+            <div class="row">
+               
+                <div class="col-12 ">
+                    <div class="updateGreetingText">
+                        
+                        “Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.”<b><i>-Rumi</i></b>
+  
+                    </div>
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="experienceTitle updateTitle">
+                        Update your account
+                    </div>
+                </div>
+            </div>
+            <form action="{% url 'updateView' %}" enctype="multipart/form-data" method="POST" >
+                {% csrf_token  %}
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="boxImgUpdate">
+                            <h6>Profile Pic</h6>
+                            {{ updateForm.profilePic  }}
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="boxImgUpdate">
+                                <h6>Id Card</h6>
+                                {{ updateForm.idcard  }}
+                                
+                            </div>
+                        </div>
+                    <div class="col-md-6 col-12">
+                        <div class="inputBoxCustomer">
+                            {{ updateForm.name  }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="inputBoxCustomer">
+                            {{ updateForm.email  }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="inputBoxCustomer">
+                            {{ updateForm.phone  }}
+                        </div>
+                        <center> <button type="submit" class="raise">Submit</button></center>
+                        
+                  
+                    </div>
+                </div><br><br><br><br>
+                <div class="row">
+                    <div class="col-3 ">
+
+                    </div>
+                    
+     
+                         
+                        
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+    
+        
